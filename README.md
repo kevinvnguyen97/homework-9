@@ -4,13 +4,13 @@ This program is a template for easy creation of 'README.md' file
 
 ## Table of Contents
 
-* [Installation] (#installation)
-* [Usage] (#usage)
-* [Credits] (#credits)
-* [License] (#license)
-* [Contributors] (#contributors)
-* [Profile Pic] (#profile-pic)
-* [Email] (#email)
+* [Installation] (##installation)
+* [Usage] (##usage)
+* [Credits] (##credits)
+* [License] (##license)
+* [Contributors] (##contributors)
+* [Profile Pic] (##profile-pic)
+* [Email] (##email)
 
 ## Installation
 
