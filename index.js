@@ -45,8 +45,8 @@ questions.prompt([
     // Contributing
     {
         type: "input",
-        message: "Contributing:",
-        name: "contributing"
+        message: "Contributors:",
+        name: "contributors"
     },
 
     // // Tests
