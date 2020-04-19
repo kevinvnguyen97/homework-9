@@ -4,24 +4,36 @@ function generateMarkdown(data) {
 ${data.description}
 
 ## Table of Contents
-${data.contents}
+* [Installation] (#installation)
+* [Usage] (#usage)
+* [Credits] (#credits)
+* [License] (#license)
+* [Contributors] (#contributors)
+* [Github Profile Pic URL] (#profile-pic)
+* [Github Email] (#email)
 
 ## Installation Instructions
+
 ${data.installation}
 
 ## How to Use
+
 ${data.usage}
 
 ## License
+
 ${data.license}
 
 ## Contributors
+
 ${data.contributing}
 
-## Github profile pic URL
+## Github Profile Pic URL
+
 ${data.url}
 
-## Github username
+## Github Email
+
 ${data.email}
 `
 }

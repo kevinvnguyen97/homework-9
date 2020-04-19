@@ -16,13 +16,6 @@ questions.prompt([
         name: "description"
     },
 
-    // Input table of contents
-    {
-        type: "input",
-        message: "Table of Contents:",
-        name: "contents"
-    },
-
     // Input installation description
     {
         type: "input",
