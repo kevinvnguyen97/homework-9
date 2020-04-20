@@ -36,9 +36,6 @@ README file.
 
 * Kevin Nguyen
 
-## Credits
-
-* Kevin Nguyen
 
 ## License
 
