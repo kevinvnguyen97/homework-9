@@ -23,7 +23,7 @@ questions.prompt([
     // Input installation description
     {
         type: "input",
-        message: "Installation):",
+        message: "Installation:",
         name: "installation",
         default: "N/A"
     },
@@ -34,6 +34,14 @@ questions.prompt([
         message: "Usage:",
         name: "usage",
         default: "N/A"
+    },
+
+    // Input credits
+    {
+        type: "input",
+        message: "Credits (If adding multiple, separate w/ comma and space):",
+        name: "credits",
+        default: "none"
     },
 
     // License
@@ -50,17 +58,16 @@ questions.prompt([
 
     // Contributing
     {
-        type: "input",
-        message: "Contributors (If adding multiple, separate w/ comma and space):",
-        name: "contributors",
-        default: "N/A"
+        type: "confirm",
+        message: "Include Contributing Code of Conduct?:",
+        name: "contributing"
     },
 
     // Tests
     {
         type: "confirm",
-        message: "Include tests?:",
-        name: "tests"
+        message: "Include generated README test?:",
+        name: "test"
     },
 
     // Github URL
@@ -80,19 +87,34 @@ questions.prompt([
 ]).then(function(response) {
     //console.log(response);
     // Getting license info
+
     var fs = require("fs");
     setLicense(response, fs);
 
-    response.contributors = splitContributors(response.contributors);
+    if(response.credits === "" || response.credits === null) {
+        response.credits = "none";
+    }
+    response.credits = splitCredits(response.credits);
 
-    if (response.tests) {
-        response.tests = "[Generated README](generated_README.md)";
+    if (response.test) {
+        response.test = "[Generated README](generated_README.md)";
+    }
+
+    if (response.contributing) {
+        response.contributing = read("./code_of_conduct.txt", fs);
     }
 
     var generatedReadMe = readMeGenerator(response);
 
-    if (!response.tests) {
-        generatedReadMe.replace(`## Tests\n\n${response.tests}\n\n\n`, "");
+    if (!response.test && !response.contributing) {
+        generatedReadMe = generatedReadMe.replace("\n* [Test](#test)", "").replace(`## Test\n\nfalse\n\n\n`, "")
+                                        .replace("\n* [Contributing](#contributing", "").replace(`## Contributing\n\nfalse\n\n\n`, "");
+    }
+    else if (!response.test) {
+        generatedReadMe = generatedReadMe.replace("\n* [Test](#test)", "").replace(`## Test\n\nfalse\n\n\n`, "");
+    }
+    else if (!response.contributing) {
+        generatedReadMe = generatedReadMe.replace("\n* [Contributing](#contributing", "").replace(`## Contributing\n\nfalse\n\n\n`, "");
     }
 
     writeToFile(generatedReadMe, fs);
@@ -107,55 +129,50 @@ function title() {
 
 function setLicense(res, fs) {
     var licenseLocation;
-    console.log(`Chosen license: ${res.license}`);
     if (res.license === "Apache License 2.0") {
         licenseLocation = "./licenses/apache_2.txt";
-        licenseTxt = readLicense(licenseLocation, fs);
+        licenseTxt = read(licenseLocation, fs);
         res.license = licenseTxt.replace("[yyyy]", new Date().getFullYear())
-                        .replace("[name of copyright owner]", res.contributors);
+                        .replace("[name of copyright owner]", res.credits);
     }
 
     else if (res.license === "GNU General Public License 3.0") {
         licenseLocation = "./licenses/gnu_v3.txt";
-        licenseTxt = readLicense(licenseLocation, fs);
+        licenseTxt = read(licenseLocation, fs);
         res.license = licenseTxt.replace("<one line to give the program's name and a brief idea of what it does.>", res.title)
                         .replace("<year>", new Date().getFullYear())
-                        .replace("<name of author>", res.contributors);
+                        .replace("<name of author>", res.credits);
     }
 
     else {
         licenseLocation = "./licenses/mit.txt";
-        licenseTxt = readLicense(licenseLocation, fs);
+        licenseTxt = read(licenseLocation, fs);
         res.license = licenseTxt.replace("[year]", newDate().getFullYear())
-                        .replace("[fullname]", res.contributors);
+                        .replace("[fullname]", res.credits);
     }
 }
 
-function readLicense(license, readFs) {
-    var licenseText = readFs.readFileSync(license, "utf8", function(error) {
+function read(txt, readFs) {
+    var text = readFs.readFileSync(txt, "utf8", function(error) {
         if(error) {
             return console.log(error);
         }
     });
 
-    return licenseText;
+    return text;
 }
 
-function splitContributors(contributorList) {
-    contributorList = contributorList.split(", ");
-    console.log(contributorList);
+function splitCredits(creditsList) {
+    creditsList = creditsList.split(", ");
 
-    var contributorsTxt = "";
-    for(var i = 0; i < contributorList.length; i++) {
-        contributorsTxt += `* ${contributorList[i]}`;
-        if (i !== contributorList.length - 1) {
-            contributorsTxt += "\n";
+    var creditsTxt = "";
+    for(var i = 0; i < creditsList.length; i++) {
+        creditsTxt += `* ${creditsList[i]}`;
+        if (i !== creditsList.length - 1) {
+            creditsTxt += "\n";
         }
     }
-
-    console.log(contributorsTxt);
-
-    return contributorsTxt;
+    return creditsTxt;
 }
 
 function writeToFile(readmeTxt, fs) {

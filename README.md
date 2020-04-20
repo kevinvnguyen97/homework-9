@@ -1,15 +1,19 @@
 # Kevin's README Generator
 
-This README generator is a template for creating a README file.\n\nThe purpose is for developers writing programs to\n\nquickly and easily have a template for a good README file, providing detailed documentation on how to use their programs.
+This README generator is a template for creating a README file.
+The purpose is for developers writing programs to
+quickly and easily have a template for a good README file,
+providing detailed documentation on how to use their programs.
 
 
 ## Table of Contents
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
-* [Contributors](#contributors)
-* [Tests](#tests)
+* [Contributing](#contributors)
+* [Test](#test)
 * [Github Profile Pic URL](#github-profile-pic-url)
 * [Github Email](#github-email)
 
@@ -19,10 +23,18 @@ This README generator is a template for creating a README file.\n\nThe purpose i
 Install the entire package.
 
 
-## How to Use
+## Usage
 
-In Terminal, type 'node index.js' to run the program.\n\nYou will be greeted with multiple prompts to add your information\n\nfor different sections of the README.\n\nAfter all prompts are answered, the program generates 'generated_README.md'\n\ncontaining the completed README file.
+In Terminal, type 'node index.js' to run the program.
+You will be greeted with multiple prompts to add your information
+for different sections of the README.After all prompts are answered,
+the program generates 'generated_README.md' containing the completed
+README file.
 
+
+## Credits
+
+* Kevin Nguyen
 
 ## License
 
@@ -43,11 +55,23 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-## Contributors
+## Contributing
 
-* Kevin Nguyen
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],
+version 2.0, available at
+https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
 
-## Tests
+Community Impact Guidelines were inspired by [Mozilla's code of conduct
+enforcement ladder](https://github.com/mozilla/diversity).
+
+[homepage]: https://www.contributor-covenant.org
+
+For answers to common questions about this code of conduct, see the FAQ at
+https://www.contributor-covenant.org/faq. Translations are available at
+https://www.contributor-covenant.org/translations.
+
+
+## Test
 
 [Generated README](generated_README.md)
 

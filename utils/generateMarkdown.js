@@ -5,13 +5,15 @@ ${data.description}
 
 
 ## Table of Contents
-* [Installation] (#installation)
-* [Usage] (#usage)
-* [Credits] (#credits)
-* [License] (#license)
-* [Contributors] (#contributors)
-* [Github Profile Pic URL] (#profile-pic)
-* [Github Email] (#email)
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Contributing](#contributing)
+* [Test](#test)
+* [Github Profile Pic URL](#github-profile-pic-url)
+* [Github Email](#github-email)
 
 
 ## Installation Instructions
@@ -19,9 +21,14 @@ ${data.description}
 ${data.installation}
 
 
-## How to Use
+## Usage
 
 ${data.usage}
+
+
+# Credits
+
+${data.credits}
 
 
 ## License
@@ -29,9 +36,14 @@ ${data.usage}
 ${data.license}
 
 
-## Contributors
+## Contributing
 
-${data.contributors}
+${data.contributing}
+
+
+## Test
+
+${data.test}
 
 
 ## Github Profile Pic URL
