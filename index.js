@@ -1,6 +1,8 @@
 var questions = require("inquirer");
 var readMeGenerator = require("./utils/generateMarkdown.js");
 
+title();
+
 questions.prompt([
     // Input title
     {
@@ -13,7 +15,7 @@ questions.prompt([
     // Input description
     {
         type: "input",
-        message: "Project Description:",
+        message: "Project Description (Type '\\n\\n' after paragraph for a new paragraph):",
         name: "description",
         default: "N/A"
     },
@@ -21,7 +23,7 @@ questions.prompt([
     // Input installation description
     {
         type: "input",
-        message: "Installation:",
+        message: "Installation (Type '\\n\\n' after paragraph for a new paragraph):",
         name: "installation",
         default: "N/A"
     },
@@ -29,7 +31,7 @@ questions.prompt([
     // Input usage
     {
         type: "input",
-        message: "Usage:",
+        message: "Usage (Type '\\n\\n' after paragraph for a new paragraph):",
         name: "usage",
         default: "N/A"
     },
@@ -49,23 +51,17 @@ questions.prompt([
     // Contributing
     {
         type: "input",
-        message: "Contributors:",
+        message: "Contributors (If adding multiple, separate w/ comma and space):",
         name: "contributors",
         default: "N/A"
     },
 
-    // {
-    //     type: "confirm",
-    //     message: "Add more contributors?",
-
-    // },
-
-    // // Tests
-    // {
-    //     type: "input",
-    //     message: "Tests:",
-    //     name: "tests"
-    // },
+    // Tests
+    {
+        type: "confirm",
+        message: "Include tests?:",
+        name: "tests"
+    },
 
     // Github URL
     {
@@ -83,48 +79,86 @@ questions.prompt([
     }
 ]).then(function(response) {
     //console.log(response);
-    var read = require("fs");
-    var licenseLocation;
+    // Getting license info
+    var fs = require("fs");
+    setLicense(response, fs);
 
-    console.log(`Chosen license: ${response.license}`);
-    if (response.license === "Apache License 2.0") {
-        licenseLocation = "./licenses/apache_2.txt";
-        licenseTxt = readLicense(licenseLocation, read);
-        response.license = licenseTxt.replace("[yyyy]", new Date().getFullYear())
-                           .replace("[name of copyright owner]", response.contributors);
+    response.contributors = splitContributors(response.contributors);
+
+    if (response.tests) {
+        response.tests = "[Generated README](generated_README.md)";
     }
 
-    else if (response.license === "GNU General Public License 3.0") {
+    var generatedReadMe = readMeGenerator(response);
+    writeToFile(generatedReadMe, fs);
+});
+
+function title() {
+    // Title
+    console.log("Kevin's README Generator\n");
+    console.log("Generate your own professional README for better instructions");
+    console.log("of your own program.\n");
+}
+
+function setLicense(res, fs) {
+    var licenseLocation;
+    console.log(`Chosen license: ${res.license}`);
+    if (res.license === "Apache License 2.0") {
+        licenseLocation = "./licenses/apache_2.txt";
+        licenseTxt = readLicense(licenseLocation, fs);
+        res.license = licenseTxt.replace("[yyyy]", new Date().getFullYear())
+                        .replace("[name of copyright owner]", res.contributors);
+    }
+
+    else if (res.license === "GNU General Public License 3.0") {
         licenseLocation = "./licenses/gnu_v3.txt";
-        licenseTxt = readLicense(licenseLocation, read);
-        response.license = licenseTxt.replace("<one line to give the program's name and a brief idea of what it does.>", response.title)
-                                     .replace("<year>", new Date().getFullYear())
-                                     .replace("<name of author>", response.contributors);
+        licenseTxt = readLicense(licenseLocation, fs);
+        res.license = licenseTxt.replace("<one line to give the program's name and a brief idea of what it does.>", res.title)
+                        .replace("<year>", new Date().getFullYear())
+                        .replace("<name of author>", res.contributors);
     }
 
     else {
         licenseLocation = "./licenses/mit.txt";
-        licenseTxt = readLicense(licenseLocation, read);
-        response.license = licenseTxt.replace("[year]", newDate().getFullYear())
-                           .replace("[fullname]", response.contributors);
+        licenseTxt = readLicense(licenseLocation, fs);
+        res.license = licenseTxt.replace("[year]", newDate().getFullYear())
+                        .replace("[fullname]", res.contributors);
     }
-
-    var generatedReadMe = readMeGenerator(response);
-    read.writeFileSync("generated_README.md", generatedReadMe, function(error) {
-        if(error) {
-            return console.log(error);
-        }
-        
-        console.log("'generated_README.md' generated!");
-    });
-});
+}
 
 function readLicense(license, readFs) {
-    var licenseText = readFs.readFileSync(license, "utf8", function(error, apacheText) {
+    var licenseText = readFs.readFileSync(license, "utf8", function(error) {
         if(error) {
             return console.log(error);
         }
     });
 
     return licenseText;
+}
+
+function splitContributors(contributorList) {
+    contributorList = contributorList.split(", ");
+    console.log(contributorList);
+
+    var contributorsTxt = "";
+    for(var i = 0; i < contributorList.length; i++) {
+        contributorsTxt += `* ${contributorList[i]}`;
+        if (i !== contributorList.length - 1) {
+            contributorsTxt += "\n";
+        }
+    }
+
+    console.log(contributorsTxt);
+
+    return contributorsTxt;
+}
+
+function writeToFile(readmeTxt, fs) {
+    fs.writeFileSync("generated_README.md", readmeTxt, function(error) {
+        if(error) {
+            return console.log(error);
+        }
+        
+        console.log("'generated_README.md' generated!");
+    });
 }
