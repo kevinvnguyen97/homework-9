@@ -26,7 +26,7 @@ ${data.installation}
 ${data.usage}
 
 
-# Credits
+## Credits
 
 ${data.credits}
 

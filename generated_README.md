@@ -10,14 +10,13 @@ This README is the result of Kevin's coding. Just doing a test.
 * [Credits](#credits)
 * [License](#license)
 * [Contributing](#contributing)
-* [Test](#test)
 * [Github Profile Pic URL](#github-profile-pic-url)
 * [Github Email](#github-email)
 
 
 ## Installation Instructions
 
-None in particular
+N/A
 
 
 ## Usage
@@ -25,7 +24,7 @@ None in particular
 N/A
 
 
-# Credits
+## Credits
 
 * Kevin Nguyen
 * Sarena Nguyen
@@ -65,11 +64,6 @@ For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
 
-
-
-## Test
-
-[Generated README](generated_README.md)
 
 
 ## Github Profile Pic URL
