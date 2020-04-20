@@ -15,7 +15,7 @@ questions.prompt([
     // Input description
     {
         type: "input",
-        message: "Project Description (Type '\\n\\n' after paragraph for a new paragraph):",
+        message: "Project Description:",
         name: "description",
         default: "N/A"
     },
@@ -23,7 +23,7 @@ questions.prompt([
     // Input installation description
     {
         type: "input",
-        message: "Installation (Type '\\n\\n' after paragraph for a new paragraph):",
+        message: "Installation):",
         name: "installation",
         default: "N/A"
     },
@@ -31,7 +31,7 @@ questions.prompt([
     // Input usage
     {
         type: "input",
-        message: "Usage (Type '\\n\\n' after paragraph for a new paragraph):",
+        message: "Usage:",
         name: "usage",
         default: "N/A"
     },
