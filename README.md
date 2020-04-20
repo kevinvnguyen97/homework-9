@@ -9,7 +9,7 @@ This README generator is a template for creating a README file.\n\nThe purpose i
 * [Credits](#credits)
 * [License](#license)
 * [Contributors](#contributors)
-* [Tests](#tests)
+* [Test](#test)
 * [Github Profile Pic URL](#github-profile-pic-url)
 * [Github Email](#github-email)
 
@@ -47,7 +47,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 * Kevin Nguyen
 
-## Tests
+## Test
 
 [Generated README](generated_README.md)
 
