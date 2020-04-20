@@ -90,6 +90,11 @@ questions.prompt([
     }
 
     var generatedReadMe = readMeGenerator(response);
+
+    if (!response.tests) {
+        generatedReadMe.replace(`## Tests\n\n${response.tests}\n\n\n`, "");
+    }
+
     writeToFile(generatedReadMe, fs);
 });
 

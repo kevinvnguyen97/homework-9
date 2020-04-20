@@ -4,13 +4,14 @@ This README generator is a template for creating a README file.\n\nThe purpose i
 
 
 ## Table of Contents
-* [Installation] (#installation)
-* [Usage] (#usage)
-* [Credits] (#credits)
-* [License] (#license)
-* [Contributors] (#contributors)
-* [Github Profile Pic URL] (#profile-pic)
-* [Github Email] (#email)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [Github Profile Pic URL](#github-profile-pic-url)
+* [Github Email](#github-email)
 
 
 ## Installation
@@ -45,6 +46,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ## Contributors
 
 * Kevin Nguyen
+
+## Tests
+
+[Generated README](generated_README.md)
 
 
 ## Github Profile Pic URL
