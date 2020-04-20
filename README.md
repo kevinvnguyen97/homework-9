@@ -1,6 +1,6 @@
 # Kevin's README Generator
 
-This README generator is a template for creating a README file.
+This README generator is a template for creating a README file. 
 The purpose is for developers writing programs to
 quickly and easily have a template for a good README file,
 providing detailed documentation on how to use their programs.
@@ -25,9 +25,9 @@ Install the entire package.
 
 ## Usage
 
-In Terminal, type 'node index.js' to run the program.
+In Terminal, type 'node index.js' to run the program. 
 You will be greeted with multiple prompts to add your information
-for different sections of the README.After all prompts are answered,
+for different sections of the README. After all prompts are answered,
 the program generates 'generated_README.md' containing the completed
 README file.
 
