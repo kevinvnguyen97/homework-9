@@ -1,42 +1,42 @@
-# Kevin's README Generator
+# Project
 
-This program is a template for easy creation of 'README.md' file
+N/A
+
 
 ## Table of Contents
+* [Installation] (#installation)
+* [Usage] (#usage)
+* [Credits] (#credits)
+* [License] (#license)
+* [Contributors] (#contributors)
+* [Github Profile Pic URL] (#profile-pic)
+* [Github Email] (#email)
 
-* [Installation] (##installation)
-* [Usage] (##usage)
-* [Credits] (##credits)
-* [License] (##license)
-* [Contributors] (##contributors)
-* [Profile Pic] (##profile-pic)
-* [Email] (##email)
+## Installation Instructions
 
-## Installation
-
-none
+N/A
 
 
-## Usage
+## How to Use
 
-Run 'node index.js' to run the application. Questions to input items for the readme are provided as prompts.
+N/A
 
 
 ## License
 
-GNU General Public License 3.0
+Apache License 2.0
 
 
 ## Contributors
 
-Kevin
+N/A
 
 
-## Profile Pic
+## Github Profile Pic URL
 
-none
+N/A
 
 
-## Email
+## Github Email
 
-kevinvannguyen1997@gmail.com
+N/A
