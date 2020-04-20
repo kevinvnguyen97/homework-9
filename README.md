@@ -36,6 +36,10 @@ README file.
 
 * Kevin Nguyen
 
+## Credits
+
+* Kevin Nguyen
+
 ## License
 
 Kevin's README Generator
