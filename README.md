@@ -11,7 +11,7 @@ providing detailed documentation on how to use their programs.
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
-* [Contributors](#contributors)
+* [Contributing](#contributors)
 * [Test](#test)
 * [Github Profile Pic URL](#github-profile-pic-url)
 * [Github Email](#github-email)
@@ -22,7 +22,7 @@ providing detailed documentation on how to use their programs.
 Install the entire package.
 
 
-## How to Use
+## Usage
 
 In Terminal, type 'node index.js' to run the program.
 You will be greeted with multiple prompts to add your information
@@ -30,6 +30,10 @@ for different sections of the README.After all prompts are answered,
 the program generates 'generated_README.md' containing the completed
 README file.
 
+
+## Credits
+
+* Kevin Nguyen
 
 ## License
 
@@ -50,9 +54,21 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-## Contributors
+## Contributing
 
-* Kevin Nguyen
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],
+version 2.0, available at
+https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+
+Community Impact Guidelines were inspired by [Mozilla's code of conduct
+enforcement ladder](https://github.com/mozilla/diversity).
+
+[homepage]: https://www.contributor-covenant.org
+
+For answers to common questions about this code of conduct, see the FAQ at
+https://www.contributor-covenant.org/faq. Translations are available at
+https://www.contributor-covenant.org/translations.
+
 
 ## Test
 
