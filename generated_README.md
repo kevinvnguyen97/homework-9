@@ -10,8 +10,8 @@ This README generator is a template for creating a README file.\n\nThe purpose i
 * [License](#license)
 * [Contributors](#contributors)
 * [Tests](#tests)
-* [Github Profile Pic URL](#profile-pic)
-* [Github Email](#email)
+* [Github Profile Pic URL](#github-profile-pic-url)
+* [Github Email](#github-email)
 
 
 ## Installation
