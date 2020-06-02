@@ -1,4 +1,4 @@
-# Homework 9: Kevin's README Generator
+# Homework 9: Kevin's README Generator App
 
 This README generator is a template for creating a README file. 
 The purpose is for developers writing programs to
